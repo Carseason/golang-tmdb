@@ -9,6 +9,7 @@ import (
 
 // TVDetails type is a struct for details JSON response.
 type TVDetails struct {
+	Adult        bool   `json:"adult"`
 	BackdropPath string `json:"backdrop_path"`
 	CreatedBy    []struct {
 		ID          int64  `json:"id"`
@@ -251,7 +252,6 @@ type TVAccountStates struct {
 // If it belongs to your favourite list.
 //
 // https://developers.themoviedb.org/3/tv/get-tv-account-states
-//
 func (c *Client) GetTVAccountStates(
 	id int,
 	urlOptions map[string]string,
